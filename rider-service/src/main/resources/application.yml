@@ -1,0 +1,36 @@
+
+server:
+  port: 8181
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/riderdb?createDatabaseIfNotExist=true
+    username: root
+    password: test@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+#  kafka:
+#    bootstrap-servers: localhost:9092
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show-sql: true
+        format-sql: true
+        enable_lazy_load_no_trans: true
+      naming-stratergy: org.hibernate.cfg.ImprovedNamingStrategy
+jwt:
+  auth:
+    app: rider-service-app
+    secret_key: thesecurekeytest@123
+    expires_in: 3600
+
+
+
+#logging:
+#  level:
+#    org:
+#      hibernate:
+#        type: trace
